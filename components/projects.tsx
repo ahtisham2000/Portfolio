@@ -13,61 +13,61 @@ const projects = [
     title: "Medicare",
     description: "A modern doctor booking platform built with React js and Stripe integration.",
     image: "/medicare.png?height=400&width=600",
-    tags: ["React", "Tailwind CSS", "MongoDB", "Stripe"],
+    tags: ["React", "Tailwind CSS", "MongoDB", "Context API"],
     demoUrl: "https://doctor-medicare-booking.netlify.app/",
     githubUrl: "#",
     category: "web",
   },
   {
     id: 2,
-    title: "Instive",
-    description: "A drag-and-drop task management application with real-time updates.",
-    image: "/instive.png?height=400&width=600",
-    tags: ["React", "Firebase", "Tailwind CSS", "DnD"],
-    demoUrl: "https://insurance-website.netlify.app",
+    title: "Music Streaming App",
+    description: "A music streaming application with playlist management and audio visualization.",
+    image: "/music-academy.png?height=400&width=600",
+    tags: ["React", , "TypeScript", "Next js", "Aceternity UI"],
+    demoUrl: "https://musicwebsite-theta.vercel.app/",
     githubUrl: "#",
     category: "web",
   },
   {
     id: 3,
+    title: "Instive",
+    description: "A drag-and-drop task management application with real-time updates.",
+    image: "/instive.png?height=400&width=600",
+    tags: ["React", "Firebase", "React Bootstrap",],
+    demoUrl: "https://insurance-website.netlify.app",
+    githubUrl: "#",
+    category: "web",
+  },
+  {
+    id: 4,
     title: "Fitness Tracker",
     description: "A mobile-first fitness tracking application with progress visualization.",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/fitness.webp?height=400&width=600",
     tags: ["React Native", "TypeScript", "Chart.js"],
     demoUrl: "#",
     githubUrl: "#",
     category: "mobile",
   },
   {
-    id: 4,
-    title: "Weather Dashboard",
-    description: "A weather dashboard with location-based forecasts and interactive maps.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "OpenWeather API", "Mapbox", "Tailwind CSS"],
-    demoUrl: "#",
-    githubUrl: "#",
-    category: "web",
-  },
-  {
     id: 5,
-    title: "Portfolio Template",
-    description: "A customizable portfolio template for developers and designers.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["Next.js", "Framer Motion", "Tailwind CSS"],
-    demoUrl: "#",
+    title: "Travel World",
+    description: "A weather dashboard with location-based forecasts and interactive maps.",
+    image: "/travelworld.png?height=400&width=600",
+    tags: ["React", "Mongo DB", "Tailwind CSS"],
+    demoUrl: "https://travel-manage.netlify.app",
     githubUrl: "#",
     category: "web",
   },
   {
     id: 6,
-    title: "Music Streaming App",
-    description: "A music streaming application with playlist management and audio visualization.",
-    image: "/placeholder.svg?height=400&width=600",
-    tags: ["React", "Node.js", "Web Audio API", "MongoDB"],
+    title: "Blogs Website",
+    description: "A customizable portfolio template for developers and designers.",
+    image: "/blogproj.png?height=400&width=600",
+    tags: ["Vue", "Vuetify", "VueX"],
     demoUrl: "#",
     githubUrl: "#",
     category: "web",
-  },
+  }
 ]
 
 const categories = [
@@ -138,7 +138,7 @@ export default function Projects() {
                 <img
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-48 object-cover object-top blur-none transition-transform duration-300 group-hover:scale-105 relative z-10" 
                 />
               </div>
               <CardContent className="pt-6">

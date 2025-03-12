@@ -14,7 +14,8 @@ const experiences = [
     period: "2024 - Present",
     description:
       "Worked in the frontend development team in building and maintaining a large-scale SaaS platform. Implementing new features, optimizing performance, and mentoring junior developers.",
-    technologies: ["React", "Next.js", "TypeScript", "MUI", "Tailwind CSS"],
+    technologies: ["React", "Next.js", "TypeScript", "MUI", "Tailwind CSS",
+      , "Redux", "Redux Toolkit"],
   },
   {
     id: 2,
@@ -23,7 +24,7 @@ const experiences = [
     period: "2023",
     description:
       "Developed responsive web applications for various clients. Collaborated with designers and backend developers to implement features and ensure cross-browser compatibility.",
-    technologies: ["Vue JS", "JavaScript", "Vuetify", "REST API", "Redux"],
+    technologies: ["Vue JS", "JavaScript", "Vuetify", "REST API", "VueX"],
   },
   {
     id: 3,

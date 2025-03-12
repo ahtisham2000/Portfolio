@@ -8,10 +8,49 @@ import ParticleBackground from "./particle-background"
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false)
+  const [text, setText] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [loopNum, setLoopNum] = useState(0)
+  const [typingSpeed, setTypingSpeed] = useState(150)
+
+  const titles = ["Frontend Developer", "Software Engineer", "UI/UX Enthusiast"]
+  const period = 2000 // pause between words
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+
+    const handleTyping = () => {
+      const i = loopNum % titles.length
+      const fullText = titles[i]
+
+      setText(isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1))
+
+      // Set typing speed
+      if (isDeleting) {
+        setTypingSpeed(75) // faster when deleting
+      } else {
+        setTypingSpeed(150) // normal typing speed
+      }
+
+      // If completed typing the word
+      if (!isDeleting && text === fullText) {
+        // Pause at the end of typing
+        setTimeout(() => setIsDeleting(true), period)
+      }
+      // If deleted the word
+      else if (isDeleting && text === "") {
+        setIsDeleting(false)
+        setLoopNum(loopNum + 1)
+      }
+    }
+
+    const timer = setTimeout(handleTyping, typingSpeed)
+    return () => clearTimeout(timer)
+  }, [text, isDeleting, loopNum, mounted, titles, typingSpeed])
 
   if (!mounted) return null
 
@@ -38,7 +77,8 @@ export default function Hero() {
           >
             <span className="block">Ahtisham ul Haq</span>
             <span className="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">
-              Frontend Developer
+              <span>{text}</span>
+              <span className="animate-blink">|</span>
             </span>
           </motion.h1>
           <motion.p
