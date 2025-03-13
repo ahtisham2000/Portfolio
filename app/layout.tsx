@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     siteName: 'Ahtisham Ul Haq Portfolio',
     images: [
       {
-        url: 'https://ahtishamulhaq.vercel.app/preview-image.jpg',
+        url: 'https://ahtishamulhaq.vercel.app/preview-image-dark.png',
         width: 1200,
         height: 630,
         alt: 'Ahtisham Ul Haq Portfolio Preview',
@@ -38,6 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+  <meta property="og:title" content="Ahtisham Ul Haq | Frontend Developer" />
+  <meta property="og:description" content="Explore my portfolio showcasing React, Next.js, and Tailwind CSS projects." />
+  <meta property="og:image" content="https://ahtishamulhaq.vercel.app/preview-image.jpg" />
+  <meta property="og:url" content="https://ahtishamulhaq.vercel.app/" />
+  
+</head>
       <body>{children}</body>
     </html>
   );
