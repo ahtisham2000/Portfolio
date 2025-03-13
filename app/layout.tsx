@@ -41,7 +41,7 @@ export default function RootLayout({
       <head>
   <meta property="og:title" content="Ahtisham Ul Haq | Frontend Developer" />
   <meta property="og:description" content="Explore my portfolio showcasing React, Next.js, and Tailwind CSS projects." />
-  <meta property="og:image" content="https://ahtishamulhaq.vercel.app/preview-image-dark.png"/>
+  <meta name="image" property="og:image" content="https://ahtishamulhaq.vercel.app/preview-image-dark.png"/>
   <meta property="og:url" content="https://ahtishamulhaq.vercel.app/" />
   
 </head>
