@@ -31,7 +31,7 @@ const projects = [
   {
     id: 3,
     title: "Instive",
-    description: "A drag-and-drop task management application with real-time updates.",
+    description: "Instive is an insurance management platform for policy handling and claims processing.",
     image: "/instive.png?height=400&width=600",
     tags: ["React", "Firebase", "React Bootstrap",],
     demoUrl: "https://insurance-website.netlify.app",
@@ -51,7 +51,7 @@ const projects = [
   {
     id: 5,
     title: "Travel World",
-    description: "A weather dashboard with location-based forecasts and interactive maps.",
+    description: "A platform that simplifies trip planning, bookings, and travel management for a seamless experience.",
     image: "/travelworld.png?height=400&width=600",
     tags: ["React", "Mongo DB", "Tailwind CSS"],
     demoUrl: "https://travel-manage.netlify.app",
@@ -61,7 +61,7 @@ const projects = [
   {
     id: 6,
     title: "Blogs Website",
-    description: "A customizable portfolio template for developers and designers.",
+    description: "A platform for creating, sharing, and reading blogs built with Vue Js, Vuetify",
     image: "/blogproj.png?height=400&width=600",
     tags: ["Vue", "Vuetify", "VueX"],
     demoUrl: "#",
