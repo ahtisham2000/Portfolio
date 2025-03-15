@@ -1,58 +1,67 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ArrowDown } from "lucide-react"
-import ParticleBackground from "./particle-background"
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
+import ParticleBackground from "./particle-background";
+import Link from "next/link";
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false)
-  const [text, setText] = useState("")
-  const [isDeleting, setIsDeleting] = useState(false)
-  const [loopNum, setLoopNum] = useState(0)
-  const [typingSpeed, setTypingSpeed] = useState(150)
+  const [mounted, setMounted] = useState(false);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const titles = ["Frontend Developer", "Software Engineer", "UI/UX Enthusiast"]
-  const period = 2000 // pause between words
+  const titles = [
+    "Frontend Developer",
+    "Software Engineer",
+    "UI/UX Enthusiast",
+  ];
+  const period = 2000; // pause between words
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
-    if (!mounted) return
+    if (!mounted) return;
 
     const handleTyping = () => {
-      const i = loopNum % titles.length
-      const fullText = titles[i]
+      const i = loopNum % titles.length;
+      const fullText = titles[i];
 
-      setText(isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1))
+      setText(
+        isDeleting
+          ? fullText.substring(0, text.length - 1)
+          : fullText.substring(0, text.length + 1)
+      );
 
       // Set typing speed
       if (isDeleting) {
-        setTypingSpeed(75) // faster when deleting
+        setTypingSpeed(75); // faster when deleting
       } else {
-        setTypingSpeed(150) // normal typing speed
+        setTypingSpeed(150); // normal typing speed
       }
 
       // If completed typing the word
       if (!isDeleting && text === fullText) {
         // Pause at the end of typing
-        setTimeout(() => setIsDeleting(true), period)
+        setTimeout(() => setIsDeleting(true), period);
       }
       // If deleted the word
       else if (isDeleting && text === "") {
-        setIsDeleting(false)
-        setLoopNum(loopNum + 1)
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
       }
-    }
+    };
 
-    const timer = setTimeout(handleTyping, typingSpeed)
-    return () => clearTimeout(timer)
-  }, [text, isDeleting, loopNum, mounted, titles, typingSpeed])
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, loopNum, mounted, titles, typingSpeed]);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return (
     <div className="relative flex items-center justify-center w-full h-screen overflow-hidden">
@@ -87,7 +96,8 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="max-w-lg mb-8 text-xl text-muted-foreground"
           >
-            Building beautiful, interactive, and performant web experiences with modern technologies.
+            Building beautiful, interactive, and performant web experiences with
+            modern technologies.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -95,24 +105,31 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-wrap gap-4 justify-center"
           >
-            <Button size="lg" className="gap-2">
-              View My Work
-              <ArrowDown className="w-4 h-4" />
-            </Button>
+            <Link href="#experience" passHref>
+              <Button size="lg" className="gap-2">
+                View My Work
+                <ArrowDown className="w-4 h-4" />
+              </Button>
+            </Link>
+
+            <Link href="#contact" passHref>
             <Button size="lg" variant="outline">
               Contact Me
             </Button>
+            </Link>
           </motion.div>
         </div>
       </div>
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
-        <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}
+        >
           <Button variant="ghost" size="icon" className="rounded-full">
             <ArrowDown className="w-5 h-5" />
           </Button>
         </motion.div>
       </div>
     </div>
-  )
+  );
 }
-
