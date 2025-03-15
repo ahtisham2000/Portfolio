@@ -105,7 +105,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex flex-wrap gap-4 justify-center"
           >
-            <Link href="#experience" passHref>
+            <Link href="#projects" passHref>
               <Button size="lg" className="gap-2">
                 View My Work
                 <ArrowDown className="w-4 h-4" />
@@ -113,9 +113,9 @@ export default function Hero() {
             </Link>
 
             <Link href="#contact" passHref>
-            <Button size="lg" variant="outline">
-              Contact Me
-            </Button>
+              <Button size="lg" variant="outline">
+                Contact Me
+              </Button>
             </Link>
           </motion.div>
         </div>
