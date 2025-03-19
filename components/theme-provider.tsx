@@ -7,7 +7,9 @@ import {
 } from "next-themes";
 
 export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
-  return <NextThemesProvider defaultTheme="light"  attribute="class" {...props}>
-    {children}
-    </NextThemesProvider>;
+  return (
+    <NextThemesProvider defaultTheme="light" attribute="class" {...props}>
+      {children}
+    </NextThemesProvider>
+  );
 }

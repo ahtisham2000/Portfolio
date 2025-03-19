@@ -6,6 +6,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github } from "lucide-react"
+import Link from "next/link";
 
 const projects = [
   {
@@ -178,9 +179,11 @@ export default function Projects() {
         viewport={{ once: true }}
         className="flex justify-center mt-12"
       >
+        <Link href="#projects" >
         <Button variant="outline" size="lg">
           View All Projects
         </Button>
+        </Link>
       </motion.div>
     </div>
   )
