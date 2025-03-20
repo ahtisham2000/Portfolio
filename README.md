@@ -51,7 +51,7 @@ vercel
 ## 👨‍💻 Author
 - **Ahtisham Ul Haq**
 - [LinkedIn](https://www.linkedin.com/in/ahtisham10/)
-- [Portfolio](https://your-portfolio.com)
+- [Portfolio](https://ahtishamulhaq.vercel.app/)
 
 ## 📜 License
 This project is **open-source** under the MIT License.
